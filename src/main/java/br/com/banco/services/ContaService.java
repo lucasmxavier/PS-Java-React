@@ -20,7 +20,7 @@ public class ContaService {
 	private TransferenciaService transferenciaService;
 	
 	public Conta retornarConta(Long id) {
-		return contaRepository.findById(id).get();
+		return contaRepository.findById(id).orElse(null);
 	}
 	
 	public List<Transferencia> retornarTransferencias(Long id, Optional<String> operador, Optional<Date> inicio, Optional<Date> fim) {
